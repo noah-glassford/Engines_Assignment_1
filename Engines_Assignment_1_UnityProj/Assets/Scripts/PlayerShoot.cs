@@ -34,6 +34,14 @@ public class PlayerShoot : MonoBehaviour
         InternalShotTimer = 0;
 
         GameObject SpawnedBullet = GameObject.Instantiate(BulletPrefab, FaceCube.transform.position, Quaternion.identity);
+
+        EnemyFactory enemyFactory = new EnemyFactory();
+
+        if (Random.Range(0f, 1f) > 0.5f)
+            SpawnedBullet.GetComponent<Light>().color = enemyFactory.GetEnemy(EnemyType.Pink).GetColor();
+        else
+            SpawnedBullet.GetComponent<Light>().color = enemyFactory.GetEnemy(EnemyType.Red).GetColor();
+
         Rigidbody rb = SpawnedBullet.GetComponent<Rigidbody>();
         rb.AddForce(FaceCube.transform.right * ShotSpeed);
 
