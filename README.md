@@ -1,5 +1,14 @@
-# Engines_Assignment_1
-Youtube Link: https://youtu.be/FT8BFQWNKcA
-Github Repo Link: https://github.com/noah-glassford/Engines_Assignment_1/tree/Midterm_Quiz
-WebGl (No Plugin): https://noah-glassford.github.io/Engines_Assignment_1/
-Exe file (With Plugin): https://github.com/noah-glassford/Engine_Design_Quiz_Midterm/
+Engine Assignment 2
+Submission for Noah Glassford & Mitchel Bloch
+Sources used for code: 
+Command Pattern Reference (Very similar to tutorials)
+https://youtu.be/I1BocNFIkwI
+Factory Pattern Reference
+https://en.wikipedia.org/wiki/Factory_method_pattern (C# implementation section)
+
+How to use:
+Simply run the exe file that is in the repo
+
+Demo Video:
+https://youtu.be/NWY63zUlHOw
+
