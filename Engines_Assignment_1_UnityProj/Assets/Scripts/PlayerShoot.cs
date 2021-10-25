@@ -48,7 +48,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Shoot");
+        //Debug.Log("Shoot");
         InternalShotTimer = 0;
 
         GameObject SpawnedBullet = GameObject.Instantiate(BulletPrefab, FaceCube.transform.position, Quaternion.identity);
