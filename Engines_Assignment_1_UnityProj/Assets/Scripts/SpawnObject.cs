@@ -8,10 +8,10 @@ public class SpawnObject : MonoBehaviour
     static List<GameObject> placed;
 
 
-    public static void SpawnPrefab(GameObject prefab, string name, Transform transform)
+    public static void SpawnPrefab(GameObject prefab, string name)
     {
         GameObject spawned = Instantiate(prefab);
-        spawned.transform.position = transform.position;
+        spawned.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
         spawned.name = name;
 
         //wall blocks are scaled to 1,3.07,1, enemies are default scale

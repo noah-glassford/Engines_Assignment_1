@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//https://www.youtube.com/watch?v=I1BocNFIkwI
-//This and the other command design pattern scripts were taken from this video
-//The placing scripts themselves were modified for the instantiation we are using
-
-
-
 public class CommandInvoker : MonoBehaviour
 {
     static Queue<ICommand> commandBuffer;
@@ -49,8 +43,6 @@ public class CommandInvoker : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log("Undo");
-
                 if (counter > 0)
                 {
                     counter--;

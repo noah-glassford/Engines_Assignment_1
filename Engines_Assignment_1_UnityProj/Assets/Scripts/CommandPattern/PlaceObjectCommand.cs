@@ -6,19 +6,17 @@ public class PlaceObjectCommand : ICommand
 {
     GameObject prefab;
     string GameObjectName;
-    Transform playerTransform;
     
 
-    public PlaceObjectCommand(GameObject prefab, string name, Transform placeLoc)
+    public PlaceObjectCommand(GameObject prefab, string name)
     {
         this.prefab = prefab;
         this.GameObjectName = name;
-        this.playerTransform = placeLoc;
     }
 
     public void Execute()
     {
-        SpawnObject.SpawnPrefab(prefab, GameObjectName, playerTransform);
+        SpawnObject.SpawnPrefab(prefab, GameObjectName);
     }
 
     public void Undo()

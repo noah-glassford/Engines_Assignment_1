@@ -13,21 +13,7 @@ public class OnButtonPlace : MonoBehaviour
     {
 
         GameObject prefabTemp = prefab;
-
-        //pass enemy into enemy factory
-        if (prefabTemp.tag == "enemy")
-        {
-            EnemyFactory enemyFactory = new EnemyFactory();
-
-            if (Random.Range(0f, 1f) > 0.5f)
-            prefabTemp.GetComponent<Renderer>().material.color = enemyFactory.GetEnemy(EnemyType.Pink).GetColor();
-            else
-            prefabTemp.GetComponent<Renderer>().material.color = enemyFactory.GetEnemy(EnemyType.Red).GetColor();
-
-        }
-
-
-        ICommand command = new PlaceObjectCommand(prefabTemp, ( "PlacedObject" + prefabTemp.GetInstanceID()), GameObject.FindGameObjectWithTag("Player").transform);
+        ICommand command = new PlaceObjectCommand(prefabTemp, ( "PlacedObject" + prefabTemp.GetInstanceID()));
         CommandInvoker.AddCommand(command);
     }
 
