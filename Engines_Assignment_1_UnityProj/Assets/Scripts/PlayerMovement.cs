@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed;
 
+    [SerializeField] private LayerMask groundMask;
 
     // Update is called once per frame
     void Update()
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         #endregion
 
         #region Arrow Key Rotation
+        /*
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);
@@ -51,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        */
+       
+
         #endregion
 
 
@@ -58,7 +63,51 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(InputMovementVec * MovementSpeed, Space.World);
 
-
+        Aim();
 
     }
+
+
+    private void Aim()
+    {
+
+
+
+        var (success, position) = GetMousePosition();
+        if (success)
+        {
+            Debug.Log("Test");
+
+            // Calculate the direction
+            var direction = position - transform.position;
+
+            // You might want to delete this line.
+            // Ignore the height difference.
+            direction.y = 0;
+
+            // Make the transform look in the direction.
+            transform.forward = direction;
+        }
+    }
+
+
+    private (bool success, Vector3 position) GetMousePosition()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask))
+        {
+            // The Raycast hit something, return with the position.
+            return (success: true, position: hitInfo.point);
+        }
+        else
+        {
+            // The Raycast did not hit anything.
+            return (success: false, position: Vector3.zero);
+        }
+
+    }
+
+
+
 }

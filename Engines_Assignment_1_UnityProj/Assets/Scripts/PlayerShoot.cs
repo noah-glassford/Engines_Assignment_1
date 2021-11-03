@@ -6,13 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
 
 
-    [DllImport("Plugin")]
-    private static extern float RandomFloat();
 
-
-
-
-    private float DLL_Affected_ShotSpeed; //this is what gets modified by the DLL
     public float ShotSpeed = 1;
     public float TimeBetweenShots = 1;
     private float InternalShotTimer = 0f;
@@ -28,7 +22,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        InternalShotTimer += Time.deltaTime * DLL_Affected_ShotSpeed;
+        InternalShotTimer += Time.deltaTime;
 
         if (InternalShotTimer >= TimeBetweenShots)
         {
@@ -39,11 +33,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void Start()
     {
-        DLL_Affected_ShotSpeed = RandomFloat();
-        if (DLL_Affected_ShotSpeed <= 0)
-        {
-            DLL_Affected_ShotSpeed = 1;
-        }
+
+  
     }
 
     private void Shoot()
@@ -61,7 +52,11 @@ public class PlayerShoot : MonoBehaviour
             SpawnedBullet.GetComponent<Light>().color = enemyFactory.GetEnemy(EnemyType.Red).GetColor();
 
         Rigidbody rb = SpawnedBullet.GetComponent<Rigidbody>();
-        rb.AddForce(FaceCube.transform.right * ShotSpeed);
+
+
+     
+
+        rb.AddForce(FaceCube.transform.forward * ShotSpeed);
 
     }
 }
