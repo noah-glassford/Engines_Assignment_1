@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//The look at mouse code was taken from:
+//https://github.com/BarthaSzabolcs/Tutorial-IsometricAiming/blob/main/Assets/Scripts/Simple%20-%20CopyThis/IsometricAiming.cs
+//https://www.youtube.com/watch?v=AOVCKEJE6A8
+
+
+
 public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed;
@@ -33,29 +39,6 @@ public class PlayerMovement : MonoBehaviour
         {
             InputMovementVec.x += 1;
         }
-        #endregion
-
-        #region Arrow Key Rotation
-        /*
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.rotation = Quaternion.Euler(0, -90, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.rotation = Quaternion.Euler(0, 90, 0);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.rotation = Quaternion.Euler(0, -180, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        */
-       
-
         #endregion
 
 

@@ -42,7 +42,11 @@ public class PlayerShoot : MonoBehaviour
         //Debug.Log("Shoot");
         InternalShotTimer = 0;
 
-        GameObject SpawnedBullet = GameObject.Instantiate(BulletPrefab, FaceCube.transform.position, Quaternion.identity);
+        //Old spawning code
+        //GameObject SpawnedBullet = GameObject.Instantiate(BulletPrefab, FaceCube.transform.position, Quaternion.identity);
+        
+        //New spawning code using pools
+        GameObject SpawnedBullet = BulletObjectPooler.instance.SpawnFromPool("Bullet", FaceCube.transform.position, Quaternion.identity);
 
         EnemyFactory enemyFactory = new EnemyFactory();
 

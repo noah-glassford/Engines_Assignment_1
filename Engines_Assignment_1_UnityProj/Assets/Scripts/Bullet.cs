@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag != "Player")
         {
-            GameObject.Destroy(gameObject);
+            //GameObject.Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         for (int i = 0; i < TagsBulletDestroys.Count; i++)
@@ -22,7 +23,7 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.tag == TagsBulletDestroys[i])
             {
                 GameObject.Destroy(collision.gameObject);
-                GameObject.Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
 

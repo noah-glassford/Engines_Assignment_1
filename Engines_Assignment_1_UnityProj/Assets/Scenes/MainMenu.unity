@@ -803,7 +803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Engines Assignment 1
+  m_text: 'Engines Assignment 3
 
     Noah Glassford - 100743060'
   m_isRightToLeft: 0
@@ -1527,7 +1527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go To About
+  m_text: How To Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1833,13 +1833,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Developed by Noah Glassford for INFR 3110U at Ontario Tech University.
-    \n\nThis game is a basic top down twin stick shooter, with an easily customizable
-    level (In editor). Use WASD to move and arrow keys to aim. Character will shoot
-    automatically. The level is complete once all the enemies have  been defeated.\n\nPackages
-    added to project (*added by me, unity automatically added the other packages
-    in the project):\n- Text Mesh Pro\n- 2D Tilemap Editor\n- 2D Tilemap Extras (Preview
-    package to use Gameobject brush)\n- Cinemachine"
+  m_text: 'WASD To Move, Shots go toward mouse cursor
+
+    Destroy all the red capsules
+    to win
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
